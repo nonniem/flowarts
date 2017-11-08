@@ -1,13 +1,6 @@
-import {main} from "./main";
+import {pictures} from "./main";
+import {combineReducers} from "redux";
 
-const state = {
-    pictures: []
-}
-
-const reducer = function(prevState = state, action){
-    return{
-        pictures: pictures(prevState.pictures, action)
-    }
-}
+const reducer = combineReducers({pictures});
 
 export default reducer;

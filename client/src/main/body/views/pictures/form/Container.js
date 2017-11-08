@@ -1,17 +1,15 @@
 import React from "react";
 import FormComponent from "./Component";
 import {connect} from "react-redux";
-import {} from "../../../../../redux/actions/";
+import {pictures} from "../../../../../redux/actions/";
 
 class FormContainer extends React.Component{
     constructor(){
         super();
         this.state = {
-            input: {
-                title: "",
-                description: "",
-                imgUrl: ""
-            }
+            title: "",
+            description: "",
+            imgUrl: ""
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -21,24 +19,20 @@ class FormContainer extends React.Component{
         e.persist();
         this.setState((prevState) => {
             return {
-                input: {
-                    prevState.input,
-                    [e.target.name]: e.target.value
-                }
+                ...prevState,
+                [e.target.name]: e.target.value
             }
         })
     }
 
     handleSubmit(e){
         e.preventDefault();
-        this.props.addPicture(this.state.input);
+        this.props.addPicture(this.state);
         this.setState({
-            input: {
-                name: "",
-                description: "",
-                imgUrl: ""
-            }
-        })
+            title: "",
+            description: "",
+            imgUrl: ""
+        });
     }
 
     render(){
@@ -46,10 +40,10 @@ class FormContainer extends React.Component{
             <FormComponent
                 handleSubmit={this.handleSubmit}
                 handleChange={this.handleChange}
-                input={this.state.input}
+                input={this.state}
                                         />
         )
     }
 }
 
-export default connect(null, {})(FormContainer);
+export default connect(null, pictures)(FormContainer);

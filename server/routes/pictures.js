@@ -1,17 +1,33 @@
 const express = require("express");
-const pictures = express.Router();
+const pictureRoute = express.Router();
+const Picture = require("../models/picture")
 
-let array = [];
-
-pictures.get("/", (req, res) => {
-    res.send(array)
+pictureRoute.get("/", (req, res) => {
+        Picture.find(req.query, (err, thing)=>{
+            if(err) return res.status(500).send(err);
+            return res.send(thing);
+        });
 });
 
-pictures.post("/", (req, res) => {
-    array.push(req.body);
-    res.send(req.body);
-})
+pictureRoute.post("/", (req, res) => {
+        const newPicture = new Picture(req.body);
+        newPicture.save((err, savedImage) => {
+            if (err) return res.status(500).send(err);
+            return res.status(201).send(savedImage);
+        });
+});
 
-pictures.delete("/:id/", (req, res) => {
-    
-})
+pictureRoute.get("/:id/", (req, res) => {
+    Picture.findById(req.params.id, (err, image) => {
+        res.send(image);
+    });
+});
+
+pictureRoute.delete("/:id/", (req, res) => {
+    Picture.findByIdAndRemove(req.params.id, (err, image) => {
+        if (err) return res.status(500).send(err);
+        res.send(image);
+    })
+});
+
+module.exports = pictureRoute;

@@ -1,3 +1,44 @@
-* {
-    border-radius: 10%
+
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.body {
+    text-align: center;
+    font-family: Indie Flower, cursive;
+
+}
+
+
+.box {
+    border: solid magenta 3px;
+    height: 100vh;
+
+
+}
+
+.box1 {
+    border: solid #19EBFF 3px;
+    height: 100vh;
+    position: 
+}
+
+.box2 {
+    border: solid limegreen 2px;
+    background: url("https://media.giphy.com/media/Jf2zUkFdheUww/giphy.gif") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100vh;
+}
+
+
+.outside {
+    border: solid black 4px;
+    background: black;
+    height: 100vh;
 }

@@ -1,16 +1,16 @@
 import React from "react";
 import Lights from "./views/Lights";
 import Home from "./views/Home";
-import PicturesComponent from "./views/pictures/Component.js";
+import Main from "./views/pictures/main";
 import {Switch, Route} from "react-router-dom";
 
 function Body(props){
     return(
-        <div>
+        <div className="body">
             <Switch>
-                <Route path="/" component={Home}/>
-                <Route path="/pictures" component={PicturesComponent}/>
+                <Route path="/pictures" component={Main}/>
                 <Route path="/lights" component={Lights}/>
+                <Route exact path="/" component={Home}/>
             </Switch>
         </div>
     )
