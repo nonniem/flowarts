@@ -1,34 +1,33 @@
 import React from "react";
-import {Row, Col} from "react-bootstrap";
 
 function Footer(props){
     const footer = {
         color: "white",
-        height: "50px",
+        height: "30px",
         marginTop: "15px",
         background: "url('https://media.giphy.com/media/aRZ4vTsHnyW6A/giphy.gif')",
-        width: "100%"
+        position: "relative",
+        zIndex: "1"
     }
-
 
     const divd = {
         display: "flex",
         justifyContent: "space-around",
-        alignItems: "center"
-}
+        alignItems: "center",
+        textShadow: "-1px 0 #19EBFF, 0 1px yellow, 1px 0 limegreen, 0 -1px magenta",
+    }
+
+
     return(
     <div style={{...divd, ...footer}}>
-
-                <i class="fa fa-css3" aria-hidden="true" height="60px"></i>
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-                <i class="fa fa-github" aria-hidden="true"></i>
-                <i class="fa fa-soundcloud" aria-hidden="true"></i>
-                <i class="fa fa-slack" aria-hidden="true"></i>
-                <i class="fa fa-skype" aria-hidden="true"></i>
-                <i class="fa fa-linkedin" aria-hidden="true"></i>
-                <i class="fa fa-google-plus" aria-hidden="true"></i>
-                <i class="fa fa-chrome" aria-hidden="true">made by: Nonnie</i>
-
+                <a href="http://google.com/"><i className="fa fa-css3" aria-hidden="false" height="60px"></i></a>
+                <a href="https://www.facebook.com/bigcheifmartin"><i className="fa fa-facebook" aria-hidden="false"></i></a>
+                <a href="https://github.com/nonniem"><i className="fa fa-github" aria-hidden="false"></i></a>
+                <a href="https://soundcloud.com/nonnie-martin-2"><i className="fa fa-soundcloud" aria-hidden="false"></i></a>
+                <a href="http://slack.com/"><i className="fa fa-slack" aria-hidden="false"></i></a>
+                <a href="http://skype.com/"><i className="fa fa-skype" aria-hidden="false"></i></a>
+                <a href="https://www.linkedin.com/in/nonnie-martin-019847149/"><i className="fa fa-linkedin" aria-hidden="false"></i></a>
+                <a href="https://plus.google.com/u/0/112741793494510891328"><i className="fa fa-google-plus" aria-hidden="false"></i></a>
     </div>
     )
 }
