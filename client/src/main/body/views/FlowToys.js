@@ -12,7 +12,7 @@ class FlowToys extends React.Component{
         const flowtoys = {
             color: "white",
             height: "85vh",
-            overflow: "scroll",
+            overflowY: "scroll",
             display: "flex",
             flexDirection: "column",
             alignItems: "center"

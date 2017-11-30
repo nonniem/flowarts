@@ -5,7 +5,7 @@ function Home(props){
         const home = {
             color: "white",
             height: "80vh",
-            overflow: "scroll",
+            overflowY: "scroll",
             maxWidth: "80%",
             minWidth: "150px",
             textShadow: "-1px 0 #19EBFF, 0 1px yellow, 1px 0 limegreen, 0 -1px magenta",

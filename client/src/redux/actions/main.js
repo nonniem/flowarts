@@ -1,5 +1,5 @@
 import axios from "axios";
-let picturesUrl = "http://localhost:4444/pictures/"
+let picturesUrl = "/pictures/"
 
 export function loadPicture(){
     return(dispatch)=>{
