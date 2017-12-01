@@ -7,17 +7,9 @@
     "start": "node server.js",
     "deploy": "now --public"
   },
-  "now": {
-    "name": "flowarts",
-    "alias": "flowarts",
-    "env": {
-      "PORT": 8080,
-      "DB": "@db"
-    }
-  },
   "engines": {
     "node": "6.11.3"
-},
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
