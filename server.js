@@ -18,6 +18,7 @@ mongoose.connect(settings.db, (err) => {
 });
 
 app.use(express.static(path.resolve(__dirname, "client", "build")));
+
 app.use("/pictures", require("./routes/pictures"));
 
 app.get("/", (req, res) => {
