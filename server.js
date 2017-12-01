@@ -1,10 +1,11 @@
 const express = require("express");
+require('dotenv').config()
 const app = express();
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const mongoose = require('mongoose');
 const path = require('path');
-const settings = require('./settings.js');
+const settings = require('./settings');
 const morgan = require('morgan');
 
 
@@ -18,6 +19,7 @@ mongoose.connect(settings.db, (err) => {
 });
 
 app.use(express.static(path.resolve(__dirname, "client", "build")));
+
 app.use("/pictures", require("./routes/pictures"));
 
 app.get("/", (req, res) => {
