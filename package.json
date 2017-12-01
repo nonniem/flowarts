@@ -15,6 +15,9 @@
       "DB": "@db"
     }
   },
+  "engines": {
+    "node": "6.11.3"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
